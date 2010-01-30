@@ -2228,3 +2228,285 @@ Completed in 1193ms (View: 315, DB: 300) | 200 OK [http://localhost/products/rub
   [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
   [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
   [4;35;1mSQL (3.9ms)[0m   [0mSHOW TABLES[0m
+INFO: Mirroring assets from /Users/joshrachner/Projects/spree_gem/vendor/spree/vendor/extensions/localization/public to /Users/joshrachner/Projects/spree_gem/public
+INFO: Mirroring assets from /Users/joshrachner/Projects/spree_gem/vendor/extensions/site/public to /Users/joshrachner/Projects/spree_gem/public
+INFO: Loading mail preferences
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.7ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+  [4;36;1mPreference Load (0.4ms)[0m   [0;1mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 1 AND `preferences`.owner_type = 'Configuration' AND (`preferences`.`attribute` = 'enable_mail_delivery' AND `preferences`.`group_id` IS NULL AND `preferences`.`group_type` IS NULL)) LIMIT 1[0m
+NOTICE: Mail not enabled
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+INFO: Loading initializer /Users/joshrachner/Projects/spree_gem/vendor/extensions/site/config/initializers/session_store.rb
+  [4;35;1mOrder Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+INFO: Loading routes from /Users/joshrachner/Projects/spree_gem/vendor/spree/vendor/extensions/localization/config/routes.rb
+INFO: Loading routes from /Users/joshrachner/Projects/spree_gem/vendor/spree/vendor/extensions/payment_gateway/config/routes.rb
+INFO: Loading routes from /Users/joshrachner/Projects/spree_gem/vendor/extensions/site/config/routes.rb
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (4.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRole Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.4ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (0.4ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `users`.`ship_address_id` AS t0_r19, `users`.`bill_address_id` AS t0_r20, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (1) [0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-01-30 17:08:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;36;1mTaxonomy Load (0.3ms)[0m   [0;1mSELECT * FROM `taxonomies` [0m
+  [4;35;1mTaxonomy Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mProduct Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProperty Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `properties`[0m
+  [4;35;1mProperty Load (0.2ms)[0m   [0mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxon Load (0.3ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (475199832,854451430) AND (parent_id is null)) [0m
+  [4;36;1mTaxon Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (0.4ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (20000,1000)) ORDER BY position[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Load (0.4ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache miss: Spree::Config ({})
+  [4;36;1mPreference Load (0.3ms)[0m   [0;1mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 1 AND `preferences`.owner_type = 'Configuration') [0m
+Cache write (will save 0.87ms): Spree::Config
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (0.6ms)[0m   [0mSELECT * FROM `products` WHERE ((products.available_on <= '2010-01-30 23:08:24') AND (products.deleted_at is null)) LIMIT 0, 10[0m
+  [4;36;1mImage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.5ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` IN (187438981,248786582,459084718,569012001,706676762,723959550,1025786064,1035865702,1060500592) and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+  [4;36;1mVariant Load (0.4ms)[0m   [0;1mSELECT `variants`.* FROM `variants` WHERE (`variants`.product_id IN (187438981,248786582,459084718,569012001,706676762,723959550,1025786064,1035865702,1060500592) AND (variants.is_master = 0 AND variants.deleted_at IS NULL)) [0m
+  [4;35;1mVariant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `variants`[0m
+  [4;36;1mImage Load (0.6ms)[0m   [0;1mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` IN (97292824,205047256,265742438,325821322,405540681,529709246,568516732,664770399,947339321,1013589412) and `assets`.`viewable_type` = 'Variant') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering products/index
+Rendered shared/_taxonomies (2.5ms)
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mVariant Load (0.3ms)[0m   [0mSELECT * FROM `variants` WHERE (`variants`.product_id = 187438981 AND (variants.is_master = 1 AND variants.deleted_at IS NULL)) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mVariant Load (0.4ms)[0m   [0;1mSELECT * FROM `variants` WHERE (`variants`.product_id = 248786582 AND (variants.is_master = 1 AND variants.deleted_at IS NULL)) LIMIT 1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mVariant Load (0.3ms)[0m   [0mSELECT * FROM `variants` WHERE (`variants`.product_id = 459084718 AND (variants.is_master = 1 AND variants.deleted_at IS NULL)) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mVariant Load (0.3ms)[0m   [0;1mSELECT * FROM `variants` WHERE (`variants`.product_id = 569012001 AND (variants.is_master = 1 AND variants.deleted_at IS NULL)) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mVariant Load (0.4ms)[0m   [0mSELECT * FROM `variants` WHERE (`variants`.product_id = 706676762 AND (variants.is_master = 1 AND variants.deleted_at IS NULL)) LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mVariant Load (0.5ms)[0m   [0;1mSELECT * FROM `variants` WHERE (`variants`.product_id = 723959550 AND (variants.is_master = 1 AND variants.deleted_at IS NULL)) LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mVariant Load (0.3ms)[0m   [0mSELECT * FROM `variants` WHERE (`variants`.product_id = 1025786064 AND (variants.is_master = 1 AND variants.deleted_at IS NULL)) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mVariant Load (0.3ms)[0m   [0;1mSELECT * FROM `variants` WHERE (`variants`.product_id = 1035865702 AND (variants.is_master = 1 AND variants.deleted_at IS NULL)) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mVariant Load (0.4ms)[0m   [0mSELECT * FROM `variants` WHERE (`variants`.product_id = 1060500592 AND (variants.is_master = 1 AND variants.deleted_at IS NULL)) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_products (86.6ms)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_head (4.4ms)
+Rendered shared/_login_bar (6.8ms)
+Rendered shared/_store_menu (1.2ms)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (3.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (17.6ms)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (30.4ms)
+Completed in 484ms (View: 145, DB: 57) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRole Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (1.1ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load Including Associations (0.5ms)[0m   [0;1mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `users`.`ship_address_id` AS t0_r19, `users`.`bill_address_id` AS t0_r20, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (1) [0m
+
+
+Processing TaxonsController#show (for 127.0.0.1 at 2010-01-30 17:08:28) [GET]
+  Parameters: {"action"=>"show", "id"=>["brands", "ruby"], "controller"=>"taxons"}
+  [4;35;1mProduct Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProperty Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `properties`[0m
+  [4;36;1mProperty Load (0.3ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxon Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (0.2ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`permalink` = 'brands/ruby/') LIMIT 1[0m
+  [4;36;1mTaxonomy Load (0.3ms)[0m   [0;1mSELECT * FROM `taxonomies` [0m
+  [4;35;1mTaxonomy Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (0.3ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (475199832,854451430) AND (parent_id is null)) [0m
+  [4;35;1mTaxon Load (0.3ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (20000,1000)) ORDER BY position[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.8ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (3.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (0.7ms)[0m   [0mSELECT `products`.* FROM `products` INNER JOIN `products_taxons` ON `products`.id = `products_taxons`.product_id WHERE ((((products.available_on <= '2010-01-30 23:08:29') AND (products.deleted_at is null)) AND (`products_taxons`.taxon_id = 207281424 )) AND (`products_taxons`.taxon_id = 207281424 )) LIMIT 0, 10[0m
+  [4;36;1mImage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.4ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` = 569012001 and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+  [4;36;1mVariant Load (0.3ms)[0m   [0;1mSELECT `variants`.* FROM `variants` WHERE (`variants`.product_id = 569012001 AND (variants.is_master = 0 AND variants.deleted_at IS NULL)) [0m
+Rendering template within layouts/application
+Rendering taxons/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `taxons` WHERE (`taxons`.parent_id = 207281424) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mVariant Load (0.3ms)[0m   [0;1mSELECT * FROM `variants` WHERE (`variants`.product_id = 569012001 AND (variants.is_master = 1 AND variants.deleted_at IS NULL)) LIMIT 1[0m
+  [4;35;1mVariant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `variants`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_products (13.7ms)
+  [4;36;1mTaxon Load (0.4ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 20000) [0m
+Rendered shared/_taxonomies (3.9ms)
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_head (6.5ms)
+Rendered shared/_login_bar (8.2ms)
+Rendered shared/_store_menu (0.9ms)
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (14.9ms)
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (122.4ms)
+Completed in 450ms (View: 189, DB: 36) | 200 OK [http://localhost/t/brands/ruby/]
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
